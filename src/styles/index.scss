@@ -1,0 +1,341 @@
+@import "./setup.scss";
+
+.hero {
+	width: 100%;
+	height: 92vh;
+	position: relative;
+
+	nav {
+		position: absolute;
+		top: 0;
+		background-color: transparent;
+		color: white;
+
+		.navbar-menus {
+			> p {
+				border-bottom: 2px solid white;
+			}
+		}
+	}
+	header {
+		width: 60%;
+		display: grid;
+		grid-template-columns: 1fr;
+		position: absolute;
+		top: 20%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 20;
+		@include tablet {
+			top: 25%;
+			width: 45%;
+		}
+		@include desktop {
+			width: 25%;
+			top: 45%;
+		}
+
+		.losangeles {
+			color: $text-main;
+		}
+		.mountains {
+			color: $blue;
+		}
+
+		> div {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: space-between;
+			> * {
+				@include tablet {
+					font-size: 6rem;
+				}
+				@include desktop {
+					font-size: 10rem;
+				}
+				font-size: 4rem;
+				font-family: "Bebas", sans-serif;
+			}
+		}
+	}
+	.hero-filter {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-image: url("./assets/Hero-filter.png");
+		background-size: cover;
+		opacity: 0.3;
+		z-index: 70;
+	}
+	.hero-front {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-image: url("./assets/HeroFront.png");
+		background-size: cover;
+		z-index: 30;
+	}
+	.hero-back {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-image: url("./assets/HeroBack.png");
+		background-size: cover;
+		z-index: 10;
+	}
+}
+nav {
+	background-color: white;
+	position: sticky;
+	top: 0;
+	left: 0;
+
+	.navbar-menus {
+		> p {
+			border-bottom: 2px solid black;
+		}
+	}
+}
+.section-one {
+	width: 100%;
+	height: 100vh;
+	background-image: url('./assets/sectionOne.jpg');
+	background-size: cover;
+	background-position: center;
+	position: relative;
+
+	.text-content {
+		width: 100%;
+		@include desktop {
+			padding-left: 25%;
+			padding-right: 25%;
+		}
+		padding-left: 10%;
+		padding-right: 10%;
+
+		header {
+			position: relative;
+
+			h2 {
+				position: absolute;
+				left: 4rem;
+				bottom: 2rem;
+				font-size: 1.2rem;
+				@include desktop {
+					left: 5rem;
+				}
+			}
+		}
+	}
+
+	.carousel {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 9rem;
+		background-color: $blue;
+		opacity: 0.93;
+		@include desktop {
+			height: 15rem;
+		}
+		.margin {
+			width: 80%;
+			height: 100%;
+			margin-left: 10%;
+			margin-right: 10%;
+			@include desktop {
+				margin-left: 25%;
+				margin-right: 25%;
+				width: 50%;
+			}
+			overflow: hidden;
+			position: relative;
+
+			.carousel-content {
+				width: 100%;
+				height: 100%;
+				display: flex;
+				position: absolute;
+				left: 0px;
+				transition: all 300ms ease-in;
+			};
+	
+			.carousel-content.mobile {
+				> * {
+					.imgOne {
+						width: 100%;
+						height: 100%;
+						background-image: url('./assets/carouselOne.jpg');
+						background-size: cover;
+						background-position: center;
+					}
+					.imgTwo {
+						width: 100%;
+						height: 100%;
+						background-image: url('./assets/carouselTwo.jpg');
+						background-size: cover;
+						background-position: center;
+					}
+					display: grid;
+					grid-template-columns: 40vw 40vw;
+					grid-gap: 10vw;
+					padding: 5vw;
+				}
+			}
+			.carousel-content.desktop {
+				display: flex;
+				align-items: center;
+				gap: 1vw;
+
+				> * {
+					.imgOne {
+						width: 100%;
+						height: 100%;
+						background-image: url('./assets/carouselOne.jpg');
+						background-size: cover;
+						background-position: center;
+					}
+					.imgTwo {
+						width: 100%;
+						height: 100%;
+						background-image: url('./assets/carouselTwo.jpg');
+						background-size: cover;
+						background-position: center;
+					}
+					display: grid;
+					grid-template-columns: 11.75vw 11.75vw;
+					grid-gap: 1vw;
+					grid-template-rows: 100%;
+					height: 80%;
+				}
+			}
+		}
+	}
+}
+.section-two {
+	width: 100%;
+	height: 84vh;
+	display: grid;
+	grid-template-rows: 30% 3rem 1fr;
+
+	.text-content {
+		position: relative;
+		padding-left: 10%;
+		padding-right: 10%;
+
+		@include desktop {
+			display: flex;
+			gap: 6rem;
+			align-items: center;
+			padding-left: 25%;
+			padding-right: 25%;
+	
+		}
+		header {
+			position: relative;
+
+			h2 {
+				position: absolute;
+				left: 4.2rem;
+				bottom: 1.8rem;
+				font-size: 1.2rem;
+				@include desktop {
+					left: 5.5rem;
+					bottom: 2rem;
+					font-size: 1.7rem;
+				}
+			}
+		}
+	}
+	nav {
+		background-color: $blue;
+		position: relative;
+		font-family: "Oswald", sans-serif;
+
+		@include desktop {
+			display: flex;
+			padding-right: 25%;
+			padding-left: 25%;
+		}
+
+		.active-tab-mobile {
+			width: 100%;
+			height: 100%;
+			color: $blue;
+			background-color: $gray;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		};
+		.other-tabs {
+			width: 100%;
+			position: absolute;
+			top: 3rem;
+			left: 0;
+			display: none;
+			align-items: center;
+			flex-direction: column;
+			background-color: $blue;
+			color: $gray;
+			z-index: 90;
+		};
+		.active-tab-desktop {
+			width: 8rem;
+			height: 100%;
+			color: $blue;
+			background-color: $gray;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		};
+		.other-tabs-desktop {
+			width: 8rem;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			background-color: $blue;
+			color: $gray;
+		}
+	}
+
+	main {
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		position: relative;
+
+		img {
+			@include desktop {
+				height: auto;
+			}
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+}
+footer {
+	width: 100%;
+	background-color: $blue;
+	height: 8vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: $gray;
+	padding-left: 10%;
+	padding-right: 10%;
+	@include desktop {
+		padding-left: 25%;
+		padding-right: 25%;
+	}
+	z-index: 6000;
+}

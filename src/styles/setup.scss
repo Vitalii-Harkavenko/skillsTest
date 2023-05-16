@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
+$text-main: #4d4d4d;
+$blue : #414f6b;
+$gray: #a0a7b5;
+
+@mixin desktop {
+	@media (min-width: 1101px) {
+		@content
+	}
+};
+@mixin tablet {
+	@media (min-width: 901px) {
+		@content
+	}
+};
+
+h1, h2, p {
+	margin: 0;
+}
+h1, h2 {
+	font-family: "Oswald", sans-serif;
+	font-size: 4rem;
+	@include desktop {
+		font-size: 5rem;
+	}
+}
+p {
+	font-family: "Lato", sans-serif;
+	font-weight: 300;
+	font-size: 1rem;
+	@include desktop {
+		font-size: 1.5rem;
+	}
+}
+* {
+	box-sizing: border-box;
+}
+html, body, #root {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.logo-wrapper {
+	display: flex;
+
+	.logo {
+		height: 3rem;
+		width: 3rem;
+		background-image: url('./assets/Logo.png');
+		background-size: cover;
+		background-position: center;
+	}
+
+	.logo-text {
+		width: 5rem;
+		height: 3rem;
+		display: grid;
+		grid-template-columns: 1fr;
+
+		.losangeles {
+			color: $text-main;
+		}
+		.mountains {
+			color: $blue;
+		}
+
+		> div {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: space-between;
+			> * {
+				font-size: 1rem;
+				font-family: "Bebas", sans-serif;
+			}
+		}
+	}
+}
+.navbar {
+	width: 100%;
+	height: 8vh;
+	display: flex;
+	padding-left: 10%;
+	padding-right: 10%;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 80;
+	@include desktop {
+		padding-left: 25%;
+		padding-right: 25%;
+		> * {
+			display: flex;
+			gap: 1rem;
+		}
+	}
+}
