@@ -1,1 +1,1 @@
-https://skillstestcoalitiontechnologies.netlify.app/
+https://skillstest.netlify.app/
